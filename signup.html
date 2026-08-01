@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="stylesheet" href="css/auth.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up - 3D Store</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head> 
+<link rel="stylesheet" href="css/auth.css" />
+<body>
+
+  <div class="auth-container">
+    <form id="signupForm" class="auth-card">
+      <h1>Create Account</h1>
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" required placeholder="John Doe" />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" required placeholder="you@example.com" />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" required placeholder="••••••••" />
+      </div>
+
+      <button type="submit">Sign Up</button>
+
+      <p class="switch-text">
+        Already have an account? <a href="login.html">Log in</a>
+      </p>
+    </form>
+  </div>
+
+  <script src="js/signup.js"></script>
+</body>
+</html>
