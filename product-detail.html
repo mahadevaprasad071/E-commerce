@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product - 3D Store</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/product-detail.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">3D<span>Store</span></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="cart.html">Cart</a>
+      <a href="login.html">Login</a>
+    </div>
+  </nav>
+
+  <section class="product-detail">
+    <div id="product-3d"></div>
+
+    <div class="product-details-info">
+      <span id="productCategory" class="product-category"></span>
+      <h1 id="productName">Loading...</h1>
+      <p id="productPrice" class="product-price"></p>
+      <p class="hint">🖱️ Drag to rotate · Scroll to zoom</p>
+      <button id="addToCartBtn" class="btn-primary">Add to Cart</button>
+    </div>
+  </section>
+
+  <script src="js/products-data.js"></script>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+  <script type="module" src="js/product-viewer.js"></script>
+</body>
+</html>
