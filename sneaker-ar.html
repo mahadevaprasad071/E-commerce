@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sneaker Spotlight - 3D Store</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/sneaker-ar.css" />
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">3D<span>Store</span></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="cart.html">Cart <span id="cartBadge" class="cart-badge hidden"></span></a>
+      <a href="login.html">Login</a>
+    </div>
+  </nav>
+
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+  <section class="spotlight-stage">
+
+    <model-viewer
+      id="shoeViewer"
+      src="https://modelviewer.dev/shared-assets/models/glTF-Sample-Models/2.0/MaterialsVariantsShoe/glTF-Binary/MaterialsVariantsShoe.glb"
+      alt="3D Sneaker"
+      camera-controls
+      auto-rotate
+      auto-rotate-delay="0"
+      rotation-per-second="18deg"
+      shadow-intensity="1.2"
+      exposure="1.1"
+      ar
+      ar-modes="webxr scene-viewer quick-look"
+      ar-scale="auto"
+      camera-orbit="20deg 75deg 2.5m"
+    >
+      <button slot="ar-button" class="ar-button" aria-label="View sneaker in your space using AR">
+        👟 View in your space
+      </button>
+    </model-viewer>
+
+    <div class="glass-card">
+      <span class="tag">New Drop</span>
+      <h1>Nova Runner</h1>
+      <p class="price">$149.00</p>
+
+      <div class="swatches">
+        <button class="swatch swatch-indigo active" data-color="indigo" aria-label="Select indigo color"></button>
+        <button class="swatch swatch-red" data-color="red" aria-label="Select red color"></button>
+        <button class="swatch swatch-black" data-color="black" aria-label="Select black color"></button>
+        <button class="swatch swatch-white" data-color="white" aria-label="Select white color"></button>
+      </div>
+
+      <p class="desc">Engineered for movement. Drag to rotate the model, or tap "View in your space" on your phone to place it in AR — right on your floor.</p>
+
+      <button class="btn-primary" id="addToCartBtn" aria-label="Add Nova Runner to cart">Add to Cart</button>
+    </div>
+
+  </section>
+
+  <script src="js/cart-store.js"></script>
+  <script src="js/sneaker-ar.js"></script>
+</body>
+</html>

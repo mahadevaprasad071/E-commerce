@@ -1,12 +1,10 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-// Get product ID from URL (?id=1)
 const params = new URLSearchParams(window.location.search);
 const productId = parseInt(params.get('id'));
 const product = products.find(p => p.id === productId);
 
-// Fill in product info on the page
 if (product) {
   document.getElementById('productName').textContent = product.name;
   document.getElementById('productPrice').textContent = `$${product.price.toFixed(2)}`;
@@ -15,7 +13,6 @@ if (product) {
   document.getElementById('productName').textContent = "Product not found";
 }
 
-// ---- 3D Scene ----
 const container = document.getElementById('product-3d');
 
 const scene = new THREE.Scene();
@@ -33,7 +30,6 @@ renderer.setSize(container.clientWidth, container.clientHeight);
 renderer.setPixelRatio(window.devicePixelRatio);
 container.appendChild(renderer.domElement);
 
-// Lighting
 scene.add(new THREE.AmbientLight(0xffffff, 0.6));
 const pointLight = new THREE.PointLight(0x6366f1, 3, 100);
 pointLight.position.set(5, 5, 5);
@@ -42,7 +38,6 @@ const rimLight = new THREE.DirectionalLight(0x818cf8, 1);
 rimLight.position.set(-5, 3, -5);
 scene.add(rimLight);
 
-// Placeholder product shape (swap with real .glb model later)
 const geometry = new THREE.IcosahedronGeometry(1.4, 1);
 const material = new THREE.MeshStandardMaterial({
   color: 0x6366f1,
@@ -52,7 +47,6 @@ const material = new THREE.MeshStandardMaterial({
 const mesh = new THREE.Mesh(geometry, material);
 scene.add(mesh);
 
-// Controls — this is what makes it "interactive"
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.dampingFactor = 0.08;
@@ -78,3 +72,13 @@ function handleResize() {
 }
 window.addEventListener('resize', handleResize);
 handleResize();
+
+// --- Add to Cart wiring ---
+document.getElementById('addToCartBtn').addEventListener('click', () => {
+  if (product) {
+    addToCart(product);
+    alert(`${product.name} added to cart!`);
+  } else {
+    alert('Product not found.');
+  }
+});

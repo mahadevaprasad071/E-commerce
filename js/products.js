@@ -4,11 +4,11 @@ products.forEach((product, index) => {
   const card = document.createElement('a');
   card.href = `product-detail.html?id=${product.id}`;
   card.className = 'product-card';
-  card.style.animationDelay = `${index * 0.08}s`;
+  card.style.setProperty('--delay', `${index * 0.08}s`);
 
   card.innerHTML = `
     <div class="product-image">
-      <img src="${product.image}" alt="${product.name}" onerror="this.style.display='none'" />
+      <img src="${product.image}" alt="${product.name}" class="product-img" />
     </div>
     <div class="product-info">
       <span class="product-category">${product.category}</span>
@@ -18,4 +18,7 @@ products.forEach((product, index) => {
   `;
 
   grid.appendChild(card);
+
+  const img = card.querySelector('.product-img');
+  img.addEventListener('error', () => img.classList.add('img-hidden'));
 });

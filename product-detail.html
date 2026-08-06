@@ -14,7 +14,7 @@
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="products.html">Products</a>
-      <a href="cart.html">Cart</a>
+      <a href="cart.html">Cart <span id="cartBadge" class="cart-badge hidden"></span></a>
       <a href="login.html">Login</a>
     </div>
   </nav>
@@ -27,11 +27,12 @@
       <h1 id="productName">Loading...</h1>
       <p id="productPrice" class="product-price"></p>
       <p class="hint">🖱️ Drag to rotate · Scroll to zoom</p>
-      <button id="addToCartBtn" class="btn-primary">Add to Cart</button>
+      <button id="addToCartBtn" class="btn-primary" aria-label="Add product to cart">Add to Cart</button>
     </div>
   </section>
 
   <script src="js/products-data.js"></script>
+  <script src="js/cart-store.js"></script>
   <script type="importmap">
   {
     "imports": {

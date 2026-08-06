@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart - 3D Store</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/cart.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">3D<span>Store</span></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="cart.html">Cart <span id="cartBadge" class="cart-badge hidden"></span></a>
+      <a href="login.html">Login</a>
+    </div>
+  </nav>
+
+  <section class="cart-section">
+    <h1>Your Cart</h1>
+
+    <div id="cartItems" class="cart-items"></div>
+
+    <div id="emptyCartMsg" class="empty-cart hidden">
+      <p>Your cart is empty.</p>
+      <a href="products.html" class="btn-primary">Browse Products</a>
+    </div>
+
+    <div id="cartSummary" class="cart-summary">
+      <div class="summary-row">
+        <span>Subtotal</span>
+        <span id="cartTotal">$0.00</span>
+      </div>
+      <button id="checkoutBtn" class="btn-primary">Proceed to Checkout</button>
+    </div>
+  </section>
+
+  <script src="js/cart-store.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>

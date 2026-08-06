@@ -1,3 +1,10 @@
+.product-card {
+  animation-delay: var(--delay, 0s);
+}
+
+.product-img.img-hidden {
+  display: none;
+}
 .products-header {
   text-align: center;
   padding: 50px 20px 30px;
@@ -30,6 +37,7 @@
   opacity: 0;
   transform: translateY(20px);
   animation: cardFadeIn 0.5s ease forwards;
+  animation-delay: var(--delay, 0s);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -58,6 +66,10 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.product-img.img-hidden {
+  display: none;
 }
 
 .product-info {
