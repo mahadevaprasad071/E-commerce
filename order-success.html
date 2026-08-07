@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Confirmed - 3D Store</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/order-success.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">3D<span>Store</span></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="cart.html">Cart <span id="cartBadge" class="cart-badge hidden"></span></a>
+      <a href="login.html">Login</a>
+    </div>
+  </nav>
+
+  <section class="success-section">
+    <div id="success-3d"></div>
+
+    <div class="success-content">
+      <h1>Order Confirmed! 🎉</h1>
+      <p class="success-sub">Thanks<span id="customerName"></span> — your order is on its way.</p>
+
+      <div class="order-details">
+        <h2>Order Summary</h2>
+        <div id="orderItems" class="order-items"></div>
+        <div class="order-total-row">
+          <span>Total Paid</span>
+          <span id="orderTotal">$0.00</span>
+        </div>
+      </div>
+
+      <a href="products.html" class="btn-primary">Continue Shopping</a>
+    </div>
+  </section>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+    }
+  }
+  </script>
+  <script type="module" src="js/three-success.js"></script>
+  <script src="js/cart-store.js"></script>
+  <script src="js/order-success.js"></script>
+</body>
+</html>

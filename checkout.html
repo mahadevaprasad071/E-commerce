@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout - 3D Store</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/checkout.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">3D<span>Store</span></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="cart.html">Cart <span id="cartBadge" class="cart-badge hidden"></span></a>
+      <a href="login.html">Login</a>
+    </div>
+  </nav>
+
+  <section class="checkout-section">
+    <h1>Checkout</h1>
+
+    <div class="checkout-layout">
+      <form id="checkoutForm" class="checkout-form">
+        <h2>Shipping Details</h2>
+
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" required placeholder="John Doe" />
+        </div>
+
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input type="text" id="address" required placeholder="123 Main St" />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" id="city" required placeholder="City" />
+          </div>
+          <div class="form-group">
+            <label for="zip">ZIP Code</label>
+            <input type="text" id="zip" required placeholder="12345" />
+          </div>
+        </div>
+
+        <h2>Payment</h2>
+
+        <div class="form-group">
+          <label for="cardNumber">Card Number</label>
+          <input type="text" id="cardNumber" required placeholder="1234 5678 9012 3456" maxlength="19" />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="expiry">Expiry</label>
+            <input type="text" id="expiry" required placeholder="MM/YY" maxlength="5" />
+          </div>
+          <div class="form-group">
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" required placeholder="123" maxlength="3" />
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary">Place Order</button>
+      </form>
+
+      <div class="order-summary">
+        <h2>Order Summary</h2>
+        <div id="summaryItems" class="summary-items"></div>
+        <div class="summary-total-row">
+          <span>Total</span>
+          <span id="summaryTotal">$0.00</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/cart-store.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>

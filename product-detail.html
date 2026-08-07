@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Product - 3D Store</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/cart.css" />
   <link rel="stylesheet" href="css/product-detail.css" />
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
 </head>
 <body>
 
@@ -20,7 +22,16 @@
   </nav>
 
   <section class="product-detail">
-    <div id="product-3d"></div>
+    <model-viewer
+      id="product-3d"
+      src="https://modelviewer.dev/shared-assets/models/glTF-Sample-Models/2.0/MaterialsVariantsShoe/glTF-Binary/MaterialsVariantsShoe.glb"
+      alt="3D Sneaker"
+      camera-controls
+      auto-rotate
+      shadow-intensity="1.2"
+      exposure="1.1"
+      camera-orbit="20deg 75deg 2.5m"
+    ></model-viewer>
 
     <div class="product-details-info">
       <span id="productCategory" class="product-category"></span>
@@ -33,14 +44,6 @@
 
   <script src="js/products-data.js"></script>
   <script src="js/cart-store.js"></script>
-  <script type="importmap">
-  {
-    "imports": {
-      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
-    }
-  }
-  </script>
-  <script type="module" src="js/product-viewer.js"></script>
+  <script src="js/product-viewer.js"></script>
 </body>
 </html>

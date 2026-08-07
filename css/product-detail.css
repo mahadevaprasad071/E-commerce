@@ -12,11 +12,6 @@
   width: 480px;
   height: 480px;
   max-width: 100%;
-  cursor: grab;
-}
-
-#product-3d:active {
-  cursor: grabbing;
 }
 
 .product-details-info {
@@ -46,20 +41,4 @@
   font-size: 13px;
   color: #777;
   margin-bottom: 24px;
-}
-
-#addToCartBtn {
-  background: #6366f1;
-  color: white;
-  border: none;
-  padding: 14px 32px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 15px;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-#addToCartBtn:hover {
-  background: #4f46e5;
 }
