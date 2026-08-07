@@ -1,12 +1,6 @@
 # 3D Store — E-Commerce Website
 
-A 3D, animated e-commerce website built with plain **HTML, CSS, and JavaScript**, using **Three.js** for interactive 3D visuals — from login to checkout.
-
-## 🚀 Tech Stack
-- HTML5 / CSS3 / JavaScript (vanilla, no framework)
-- [Three.js](https://threejs.org/) — 3D rendering (via CDN import map)
-- `OrbitControls` (Three.js addon) — drag-to-rotate / scroll-to-zoom on product viewer
-- Live Server (VS Code) for local dev — **required**, plain `file://` opening breaks ES module imports
+A 3D, animated e-commerce website built with plain **HTML, CSS, and JavaScript**,
 
 ## 📁 Project Structure
 ```
