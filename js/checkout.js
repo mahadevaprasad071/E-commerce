@@ -25,16 +25,22 @@ function renderSummary() {
 document.getElementById('checkoutForm').addEventListener('submit', function (e) {
   e.preventDefault();
 
-  // Fake order processing — later this can call a real payment API
   const orderData = {
+    id: Date.now(),
+    date: new Date().toLocaleDateString(),
     name: document.getElementById('fullName').value,
     total: getCartTotal(),
     items: getCart()
   };
 
+  // Save as the most recent order (for order-success.html)
   localStorage.setItem('last_order', JSON.stringify(orderData));
 
-  // Clear the cart after "placing" the order
+  // Also append to full order history (for profile.html)
+  const orders = JSON.parse(localStorage.getItem('order_history')) || [];
+  orders.unshift(orderData); // newest first
+  localStorage.setItem('order_history', JSON.stringify(orders));
+
   localStorage.removeItem('store_cart');
 
   window.location.href = 'order-success.html';

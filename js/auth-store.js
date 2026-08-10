@@ -23,12 +23,9 @@ function updateAuthNav() {
   const user = getUser();
 
   if (user) {
-    authLink.textContent = `Logout (${user.name.split(' ')[0]})`;
-    authLink.href = '#';
-    authLink.onclick = (e) => {
-      e.preventDefault();
-      logoutUser();
-    };
+    authLink.textContent = user.name.split(' ')[0];
+    authLink.href = 'profile.html';
+    authLink.onclick = null;
   } else {
     authLink.textContent = 'Login';
     authLink.href = 'login.html';

@@ -4,10 +4,8 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
 
-  console.log('Login attempt:', { email, password });
+  const name = email.split('@')[0];
+  loginUser(name, email);
 
-  // For now, fake login — just redirect to home
-  // Later we'll add real validation / backend check
-  alert('Login successful (fake for now)');
   window.location.href = 'index.html';
 });
